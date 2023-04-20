@@ -1,0 +1,15 @@
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\bin\Debug\net6.0\SupplychainManagementAI.exe
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\bin\Debug\net6.0\SupplychainManagementAI.deps.json
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\bin\Debug\net6.0\SupplychainManagementAI.runtimeconfig.json
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\bin\Debug\net6.0\SupplychainManagementAI.dll
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\bin\Debug\net6.0\SupplychainManagementAI.pdb
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\obj\Debug\net6.0\SupplychainManagementAI.csproj.AssemblyReference.cache
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\obj\Debug\net6.0\SupplychainManagementAI.GeneratedMSBuildEditorConfig.editorconfig
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\obj\Debug\net6.0\SupplychainManagementAI.AssemblyInfoInputs.cache
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\obj\Debug\net6.0\SupplychainManagementAI.AssemblyInfo.cs
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\obj\Debug\net6.0\SupplychainManagementAI.csproj.CoreCompileInputs.cache
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\obj\Debug\net6.0\SupplychainManagementAI.dll
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\obj\Debug\net6.0\refint\SupplychainManagementAI.dll
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\obj\Debug\net6.0\SupplychainManagementAI.pdb
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\obj\Debug\net6.0\SupplychainManagementAI.genruntimeconfig.cache
+D:\UNIPD\Lessons\Artifitial Inteligence\project\SupplychainManagementAI\SupplychainManagementAI\SupplychainManagementAI\obj\Debug\net6.0\ref\SupplychainManagementAI.dll
