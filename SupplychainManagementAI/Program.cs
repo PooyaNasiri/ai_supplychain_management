@@ -17,15 +17,14 @@ SupplierAgent supplierAgent = new(); // the supplier agent
 ManufactureAgent manufactureAgent = new(); // the manufacture agent
 WarehouseAgent warehouseAgent = new(0); // the warehouse agent
 DeliveryAgent deliveryAgent = new(); // the delivery agent
-const int possibilities = 3, maximumUints = 100, days = 200; // the number of possibilities for each agent, the maximum number of units that can be produced and the number of days to simulate
+const int possibilities = 3, maximumUints = 100, days = 365; // the number of possibilities for each agent, the maximum number of units that can be produced and the number of days to simulate
 int calculatedStates = 0; // the maximum number of states calculated
 
 Console.WriteLine("Calculating... Please wait.");
 watch.Restart(); // start the stopwatch
 while (currentState.Days < days) // while the current state is not the last day
 {
-    int consumerDemand = rnd.Next(60, 90); // generate a random consumer demand
-    // Console.WriteLine("days : " + currentState.days + " scunt: " + states.Count);
+    int consumerDemand = rnd.Next(maximumUints / 3, maximumUints); // generate a random consumer demand
     for (int iSa = 0; iSa < possibilities; iSa++) // for each possibility of the supplier agent
     {
         supplierAgent.Set(iSa, maximumUints, possibilities); // set the supplier agent's new state
@@ -72,7 +71,8 @@ State? bestState = states.Count > 0
 
 if (bestState != null) // if there is a best state (if there is a way to satisfy the consumer demand for all the days of the simulation)
 {
-    long hunger = 0, units = 0, cost = 0, warehouseWaste = 0, manufactureWaste = 0, cpu = 0; 
+    long hunger = 0, units = 0, cost = 0, warehouseWaste = 0, manufactureWaste = 0, cpu = 0;
+    string text = string.Empty;
     do // while the best state has a parent (while the best state is not the first state) calculate the total hunger, total units provided, total cost, total warehouse waste, total manufacture waste and average cost per unit
     { 
         hunger += Math.Max(0, bestState.ConsumerDemand - bestState.Provided);
@@ -81,23 +81,42 @@ if (bestState != null) // if there is a best state (if there is a way to satisfy
         warehouseWaste += bestState.WarehouseWaste;
         manufactureWaste += bestState.ManufactureWaste;
         cpu += bestState.CpU;
+        text += Print(bestState) + "\n\n";
         bestState = bestState.Parent; // set the best state to its parent (the previous day)
     } while (bestState.Parent != null);
 
-    Console.WriteLine("\n - States calculated: " + calculatedStates +
-                      "\n - Time  elapsed: " + watch.ElapsedMilliseconds + "ms" +
-                      "\n--------------------------------" +
-                      "\n After " + days + " days :" +
-                      "\n - Total hunger : " + hunger +
-                      "\n - Total units provided : " + units +
-                      "\n - Avg. Cost per unit : " + cpu / days +
-                      "\n - Total cost : " + cost +
-                      "\n - Total manufacture waste : " + manufactureWaste +
-                      "\n - Total warehouse waste : " + warehouseWaste);
+    string finalText = "\n - States calculated: " + calculatedStates +
+                       "\n - Time  elapsed: " + watch.ElapsedMilliseconds + "ms" +
+                       "\n--------------------------------" +
+                       "\n After " + days + " days :" +
+                       "\n - Total hunger : " + hunger +
+                       "\n - Total units provided : " + units +
+                       "\n - Avg. Cost per unit : " + cpu / days +
+                       "\n - Total cost : " + cost +
+                       "\n - Total manufacture waste : " + manufactureWaste +
+                       "\n - Total warehouse waste : " + warehouseWaste;
+    Console.WriteLine(finalText);
+    text += finalText;
+    System.IO.File.WriteAllText(@"output.txt", text); // write the output text to a file
 }
 else
     Console.WriteLine("No way!"); 
 
+
+
+string Print(State state)
+{
+    string text = "\nDay " + state.Days +
+                  "\n - Consumer demand : " + state.ConsumerDemand +
+                  "\n - Units provided : " + state.Provided +
+                  "\n - Total Cost : " + state.Cost +
+                  "\n - Cost per unit : " + state.CpU +
+                  "\n - Manufacture waste : " + state.ManufactureWaste +
+                  "\n - Warehouse waste : " + state.WarehouseWaste +
+                  "\n - Warehouse used capacity : " + state.WarehouseCapacity;
+    Console.WriteLine(text);
+    return text;
+}
 
 void KeepOnlyN(int day, int n) 
 {
